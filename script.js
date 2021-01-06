@@ -24,7 +24,10 @@ Hint: you can call .querySelector on a node you've already retrieved from the DO
 
 */
 
-
+const jsGallery = document.querySelector(".gallery");
+console.log(jsGallery);
+const galleryArray = jsGallery.querySelectorAll(".js-gallery-item");
+console.log(galleryArray);
 
 /*
 
@@ -43,7 +46,18 @@ equal to the width of a single slide.
 To get the width, try .getBoundingClientRect() or .offsetWidth.
 
 */
+const slideCount = galleryArray.length;
+console.log(slideCount);
 
+const getWidth = document.querySelector(".gallery-container");
+const slidesWidth = getWidth.offsetWidth;
+console.log(slidesWidth);
+
+// another way to get width:
+// https://zellwk.com/blog/css-values-in-js/
+// const style = getComputedStyle(getWidth);
+// const slideWidth = style.width;
+// console.log(slideWidth);
 
 
 /*
