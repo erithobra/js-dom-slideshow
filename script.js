@@ -80,16 +80,25 @@ Create a function called transitionSlide that, for now, just
 `console.log`'s 'Called!' ever 5000 miliseconds
 
 */
+let currentSlide = 1;
 
+jsGallery.setAttribute("transform", "translateX()");
 
 const transitionSlide = function() {
   setInterval(timer, 5000);
   function timer() {
     console.log("Called!")
+    if (currentSlide < slideCount) {
+      jsGallery.style.transform = `translateX(${currentSlide*-1000}px)`;
+      currentSlide++;
+    } else if (currentSlide == slideCount) {
+      currentSlide = 1;
+      jsGallery.style.transform = `translateX(0px)`;
+    }
   }
 }
 
-
+transitionSlide();
 
 /*
 
@@ -113,3 +122,5 @@ Inside transitionSlide() we need to do two things:
 Hint: delta should always be a negative number
 
 */
+
+
