@@ -82,6 +82,14 @@ Create a function called transitionSlide that, for now, just
 */
 
 
+const transitionSlide = function() {
+  setInterval(timer, 5000);
+  function timer() {
+    console.log("Called!")
+  }
+}
+
+
 
 /*
 
